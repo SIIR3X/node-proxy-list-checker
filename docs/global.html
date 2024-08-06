@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="checkProxies"><span class="type-signature">(async) </span>checkProxies<span class="signature">(sites, proxies)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks proxies for a list of sites without saving the results or creating directories.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sites</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Site.html">Site</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site or list of sites to check.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Proxy.html">Proxy</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Proxy.html">Proxy</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy or list of proxies to use.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_checker.js.html">utils/checker.js</a>, <a href="utils_checker.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves when all proxies have been checked for all sites.The function performs the following steps:1. Ensures the inputs are arrays.2. Logs the start of the proxy checking process.3. Creates a list of asynchronous tasks to check each proxy for all sites.4. For each proxy, checks its connection to each site:   - If the proxy successfully connects to a site, adds it to the site's working proxies list.5. Waits for all proxy checking tasks to complete.6. Logs the completion of the proxy checking process.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="checkProxiesAndSave"><span class="type-signature">(async) </span>checkProxiesAndSave<span class="signature">(sites, proxies)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks proxies for a list of sites and saves the results.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sites</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Site.html">Site</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site or list of sites to check.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Proxy.html">Proxy</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Proxy.html">Proxy</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy or list of proxies to use.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_checker.js.html">utils/checker.js</a>, <a href="utils_checker.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves when all proxies have been checked for all sites.The function performs the following steps:1. Ensures the inputs are arrays.2. Creates the output directory and initializes files for each site.3. Logs the start of the proxy checking process.4. Creates a list of asynchronous tasks to check each proxy for all sites.5. For each proxy, checks its connection to each site:   - If the proxy successfully connects to a site, saves the proxy for that site and adds it to the site's working proxies list.   - If the proxy fails to connect to a site, marks it as not working for all sites.6. If the proxy works for all sites, saves the proxy to the "all sites" list.7. Waits for all proxy checking tasks to complete.8. Logs the completion of the proxy checking process.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="checkProxyConnection"><span class="type-signature">(async) </span>checkProxyConnection<span class="signature">(site, proxy)</span><span class="type-signature"> &rarr; {Promise.&lt;(<a href="Proxy.html">Proxy</a>|null)>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if a proxy can connect to a site.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>site</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site to connect to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Proxy.html">Proxy</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy to use for the connection.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_checker.js.html">utils/checker.js</a>, <a href="utils_checker.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to the proxy if the connection is successful, or null if it fails.The function performs the following steps:1. Constructs the proxy configuration with the provided proxy details.2. Constructs the axios configuration with the provided site URL, timeout, and proxy configuration.3. Sends a GET request to the site using axios.4. If the response status is 200, returns the proxy; otherwise, returns null.5. Catches any errors during the request and returns null.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(<a href="Proxy.html">Proxy</a>|null)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createOutputDir"><span class="type-signature"></span>createOutputDir<span class="signature">(sites)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates the output directory and initializes files for each site.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sites</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Site.html">Site</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site or list of sites for which to create files.The function performs the following steps:1. Ensures the input is an array of sites.2. Removes the old "working_proxies" directory if it exists.3. Creates a new "working_proxies" directory.4. Creates a file "all_sites.txt" listing the URLs of all sites.5. Creates an empty file for each site.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="printWorkingProxies"><span class="type-signature"></span>printWorkingProxies<span class="signature">(site)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Prints the working proxies for a given site.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>site</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site whose working proxies are to be printed.The function performs the following steps:1. Retrieves the list of working proxies from the site.2. Iterates over the list of working proxies.3. Prints the string representation of each working proxy to the console.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line98">line 98</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="readProxiesFromFile"><span class="type-signature"></span>readProxiesFromFile<span class="signature">(filePath)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Proxy.html">Proxy</a>>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Reads a file and creates an array of Proxy instances.The input file should follow the convention:ip:port:username:passwordorip:portEach line represents a proxy with its IP address, corresponding port, and optional username and password separated by colons.If the username and password are not provided, they default to null.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filePath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path to the file.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of Proxy instances.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;<a href="Proxy.html">Proxy</a>>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="readSitesFromFile"><span class="type-signature"></span>readSitesFromFile<span class="signature">(filePath)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Site.html">Site</a>>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Reads a file and creates an array of Site instances.The input file should follow the convention:url timeoutorurlEach line represents a site with its URL and an optional timeout value separated by a space.If the timeout is not provided, it defaults to 0 (no timeout).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filePath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path to the file.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to an array of Site instances.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;<a href="Site.html">Site</a>>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveProxyToAllSites"><span class="type-signature"></span>saveProxyToAllSites<span class="signature">(proxy)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Saves a proxy to the "all_sites.txt" file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>proxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Proxy.html">Proxy</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy to save.The function performs the following steps:1. Constructs the path to the "all_sites.txt" file in the "working_proxies" directory.2. Constructs the proxy string in the format "ip:port:username:password".   - If the username and password are not provided, they are omitted from the string.3. Appends the proxy string to the "all_sites.txt" file.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line199">line 199</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveProxyToFile"><span class="type-signature"></span>saveProxyToFile<span class="signature">(site, proxy)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Saves a proxy to the file corresponding to the site.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>site</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Site.html">Site</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The site for which the proxy should be saved.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Proxy.html">Proxy</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy to save.The function performs the following steps:1. Constructs the path to the site's file in the "working_proxies" directory.2. Constructs the proxy string in the format "ip:port:username:password".   - If the username and password are not provided, they are omitted from the string.3. Appends the proxy string to the site's file.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_io.js.html">utils/io.js</a>, <a href="utils_io.js.html#line172">line 172</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Proxy.html">Proxy</a></li><li><a href="Site.html">Site</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkProxies">checkProxies</a></li><li><a href="global.html#checkProxiesAndSave">checkProxiesAndSave</a></li><li><a href="global.html#checkProxyConnection">checkProxyConnection</a></li><li><a href="global.html#createOutputDir">createOutputDir</a></li><li><a href="global.html#printWorkingProxies">printWorkingProxies</a></li><li><a href="global.html#readProxiesFromFile">readProxiesFromFile</a></li><li><a href="global.html#readSitesFromFile">readSitesFromFile</a></li><li><a href="global.html#saveProxyToAllSites">saveProxyToAllSites</a></li><li><a href="global.html#saveProxyToFile">saveProxyToFile</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Aug 06 2024 16:40:59 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

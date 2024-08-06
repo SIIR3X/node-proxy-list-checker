@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: models/Proxy.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: models/Proxy.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// src/models/Proxy.js
+
+/**
+ * Class representing a proxy used to connect to sites.
+ * 
+ * @class
+ */
+class Proxy {
+	#ip;
+	#port;
+	#username;
+	#password;
+
+	/**
+	 * Create a Proxy.
+	 * @param {string} ip - The IP address of the proxy.
+	 * @param {number} port - The port number of the proxy.
+	 * @param {string} [username=null] - The username for the proxy (default is null).
+	 * @param {string} [password=null] - The password for the proxy (default is null).
+	 */
+	constructor(ip, port, username = null, password = null) {
+		this.#setIp(ip);
+		this.#setPort(port);
+		this.#setUsername(username);
+		this.#setPassword(password);
+	}
+
+	/**
+	 * Set the IP address of the proxy. (Private method)
+	 * @param {string} ip - The IP address to set.
+	 * @private
+	 */
+	#setIp(ip) {
+		if (this.#isValidIp(ip)) {
+			this.#ip = ip;
+		}
+		else {
+			this.#ip = null;
+		}
+	}
+
+	/**
+	 * Get the IP address of the proxy.
+	 * @returns {string} The IP address of the proxy.
+	 */
+	getIp() {
+		return this.#ip;
+	}
+
+	/**
+	 * Set the port number of the proxy. (Private method)
+	 * @param {number} port - The port number to set.
+	 * @private
+	 */
+	#setPort(port) {
+		if (this.#isValidPort(port)) {
+			this.#port = port;
+		}
+		else {
+			this.#port = null;
+		}
+	}
+
+	/**
+	 * Get the port number of the proxy.
+	 * @returns {number} The port number of the proxy.
+	 */
+	getPort() {
+		return this.#port;
+	}
+
+	/**
+	 * Set the username for the proxy. (Private method)
+	 * @param {string} username - The username to set.
+	 * @private
+	 */
+	#setUsername(username) {
+		this.#username = username;
+	}
+
+	/**
+	 * Get the username for the proxy.
+	 * @returns {string} The username for the proxy.
+	 */
+	getUsername() {
+		return this.#username;
+	}
+
+	/**
+	 * Set the password for the proxy. (Private method)
+	 * @param {string} password - The password to set.
+	 * @private
+	 */
+	#setPassword(password) {
+		this.#password = password;
+	}
+
+	/**
+	 * Get the password for the proxy.
+	 * @returns {string} The password for the proxy.
+	 */
+	getPassword() {
+		return this.#password;
+	}
+
+	/**
+	 * Return a string representation of the proxy.
+	 * @returns {string} A string representing the proxy.
+	 */
+	toString() {
+		return `Proxy { ip: ${this.#ip}, port: ${this.#port}, username: ${this.#username}, password: ${this.#password} }`; 
+	}
+
+	/**
+	 * Check if another proxy is equal to this one.
+	 * @param {Proxy} otherProxy - The other proxy to compare.
+	 * @returns {boolean} True if the proxies are equal, false otherwise.
+	 */
+	equals(otherProxy) {
+		if (!(otherProxy instanceof Proxy)) {
+			return false;
+		}
+
+		return this.#ip === otherProxy.getIp() &amp;&amp;
+			   this.#port === otherProxy.getPort() &amp;&amp;
+			   this.#username === otherProxy.getUsername() &amp;&amp;
+			   this.#password === otherProxy.getPassword();
+	}
+
+	/**
+	 * Validate an IP address.
+	 * @param {string} ip - The IP address to validate.
+	 * @returns {boolean} True if the IP address is valid, false otherwise.
+	 * @private
+	 */
+	#isValidIp(ip) {
+		const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+
+		const ipv6Regex = /^(?:[a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}$/;
+
+		return ipv4Regex.test(ip) || ipv6Regex.test(ip);
+	}
+
+	/**
+	 * Validate a port number.
+	 * @param {number} port - The port number to validate.
+	 * @returns {boolean} True if the port number is valid, false otherwise.
+	 * @private
+	 */
+	#isValidPort(port) {
+		const portNumber = Number(port);
+
+		return Number.isInteger(portNumber) &amp;&amp; portNumber > 0 &amp;&amp; portNumber &lt;= 65535;
+	}
+}
+
+module.exports = Proxy;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Proxy.html">Proxy</a></li><li><a href="Site.html">Site</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkProxies">checkProxies</a></li><li><a href="global.html#checkProxiesAndSave">checkProxiesAndSave</a></li><li><a href="global.html#checkProxyConnection">checkProxyConnection</a></li><li><a href="global.html#createOutputDir">createOutputDir</a></li><li><a href="global.html#printWorkingProxies">printWorkingProxies</a></li><li><a href="global.html#readProxiesFromFile">readProxiesFromFile</a></li><li><a href="global.html#readSitesFromFile">readSitesFromFile</a></li><li><a href="global.html#saveProxyToAllSites">saveProxyToAllSites</a></li><li><a href="global.html#saveProxyToFile">saveProxyToFile</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue Aug 06 2024 16:40:59 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
