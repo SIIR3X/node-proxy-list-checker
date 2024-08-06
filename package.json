@@ -1,0 +1,46 @@
+{
+	"name": "proxy-list-checker",
+	"version": "0.4.0",
+	"description": "A Node.js module to check the validity of proxies on various websites.",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "jest",
+		"docs": "jsdoc -c jsdoc.json",
+		"example": "node examples/example.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SIIR3X/node-proxy-list-checker.git"
+	},
+	"keywords": [
+		"proxy",
+		"list",
+		"checker",
+		"request",
+		"requests",
+		"http",
+		"https",
+		"proxies",
+		"site",
+		"sites",
+		"check"
+	],
+	"author": "SIIR3X",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SIIR3X/node-proxy-list-checker/issues"
+	},
+	"homepage": "https://github.com/SIIR3X/node-proxy-list-checker#readme",
+	"dependencies": {
+		"axios": "^1.7.3",
+		"http-proxy-agent": "^7.0.2",
+		"https-proxy-agent": "^7.0.5"
+	},
+	"devDependencies": {
+		"jest": "^29.7.0",
+		"jsdoc": "^4.0.3"
+	},
+	"engines": {
+		"node": ">=20.11.1"
+	}
+}
